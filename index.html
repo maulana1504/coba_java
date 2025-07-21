@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coba-coba 1</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 20px 30px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      font-size: 1.8em;
+      margin-bottom: 30px;
+    }
+
+    .story p {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    .story em {
+      font-style: italic;
+      color: #666;
+    }
+
+    .story strong {
+      font-weight: bold;
+      color: #222;
+    }
+
+    #surat {
+      display: none;
+      margin-top: 20px;
+      font-style: italic;
+      color: #444;
+    }
+
+    #bukaSurat {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      background-color: #444;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Coba-coba 1</h1>
+    <div class="story">
+      <p>Melihat sekeliling, sepoi angin bersahut-sahutan, pepohonan saling melambai satu sama lain. Jalanan kian malam, Kanaya bergegas mengayuh sepeda tuanya, sedikit was-was. Suasana malam pun sepertinya masih kurang, langit bergemuruh pelan. Sepuluh menit, lima belas menit, padahal baru sebentar tapi perjalanan terasa sangat panjang.</p>
+
+      <p>Tidak ada hal yang paling menenangkan selain dapat kembali pulang di rumah yang banyak kenangan. Dari kejauhan tampak nyala lampu di ujung teras rumah.</p>
+
+      <p><em>Sssiiiiitttt...</em> Remku berderit beradu dengan ban. Di halaman rumah yang terasa lenggang, disambut rintik hujan yang mau tidak mau membasahi jaket Kanaya. Kanaya turun dari sepeda dan segera memarkirkan dan mengunci sepedanya di teras rumah.</p>
+
+      <p><em>Cklek, cklek.</em> Potongan besi tua ini sepertinya masih cukup mampu untuk membuka gembok pintu. Terasa sunyi sekali di dalam rumah, pintu yang biasanya berderit pun tampak diam tak bersuara. Bukan gelap, tapi nyala redup ruang tamu yang menambah sunyi suasana malam itu.</p>
+
+      <p>Tertegun sejenak, dan kemudian melangkah masuk sambil menghela napas panjang. Kanaya menggantungkan jaket basahnya di gantungan dekat pintu.</p>
+
+      <p><strong>Bruk.</strong> Merebahkan badannya di sofa panjang yang terlihat empuk di ruang tamu seakan memang ada untuk setiap suasana. <strong>Kosong.</strong> Pikiran Kanaya berasa kosong. Beberapa detik berlalu, Kanaya bangkit dari rebahannya dan duduk diam, mematung memandang sepucuk surat yang dari kemarin dia biarkan tergelatak di meja ruang tamu.</p>
+
+      <button id="bukaSurat" onclick="tampilkanSurat()">Buka Surat</button>
+      <p id="surat"></p>
+    </div>
+  </div>
+
+  <script>
+    const teksSurat = "Diam di sana. Menunggu sesuatu yang mungkin tidak akan pernah dibaca.";
+    let i = 0;
+
+    function tampilkanSurat() {
+      const surat = document.getElementById("surat");
+      const tombol = document.getElementById("bukaSurat");
+
+      tombol.style.display = "none";
+      surat.style.display = "block";
+      surat.innerHTML = "";
+
+      ketikPerHuruf();
+    }
+
+    function ketikPerHuruf() {
+      if (i < teksSurat.length) {
+        document.getElementById("surat").innerHTML += teksSurat.charAt(i);
+        i++;
+        setTimeout(ketikPerHuruf, 40); // kecepatan ketik
+      }
+    }
+  </script>
+</body>
+</html>
